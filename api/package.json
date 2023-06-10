@@ -1,0 +1,13 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "node-fetch": "^3.2.6",
+    "request-ip": "^3.3.0"
+  }
+}
