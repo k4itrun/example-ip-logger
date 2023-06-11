@@ -16,7 +16,7 @@ Gracias por querer obtener este gran código, un iplogger que usa una API para e
 ## Iniciar servidor local
 1. Copia todo el contenido de la carpeta [IpLogger](https://github.com/k4itrun/IpLogger/tree/main/iplogger) y pégalo en el nuevo proyecto **Local**.
 2. Instala todos los paquetes necesarios con `npm install`.
-3. Cuando tengas la **API** en línea en Replit, edita `https://<apiUrl>/api/data` con la URL de la API en [replit.com](https://replit.com/).
+3. Cuando tengas la **API** en línea en **Replit**, edita `https://<apiUrl>/api/data` con la **URL** de la API en [replit.com](https://replit.com/).
 ```js
 80   // Función para enviar los datos a la API
 81   function sendDataToExternalAPI(data) {
