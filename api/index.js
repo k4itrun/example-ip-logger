@@ -1,54 +1,54 @@
 const express = require('express');
-const requestIp = require('request-ip');
 const axios = require('axios');
 const app = express();
-const port = 3000;
 
-const webhookUrl = '<webhookUrl>';
+const port = 3000; // port in server
+const webhook = 'https://discord.com/api/webhooks/'; // replace and add your webhook
 
 app.use(express.json());
 
 app.post('/api/data', async (req, res) => {
-
   try {
-    console.log('Datos de la IP:', req.body);
-
-    // Aquí puedes realizar el procesamiento adicional con los datos de la IP recibidos
-
-    // Envía los datos a la webhook
-    await sendWebhook(req.body);
-
-    res.json({ message: 'Datos recibidos correctamente' });
+    console.log('IP Data:', req.body);
+    await processIPData(req.body);
+    res.json({ message: 'Data received successfully' });
   } catch (error) {
-    console.error('Error al obtener los detalles de la IP:', error);
-    res.status(500).json({ error: 'Error al obtener los detalles de la IP' });
+    console.error('Error processing IP details:', error);
+    res.status(500).json({ error: 'Error processing IP details' });
   }
 });
 
-async function sendWebhook(data) {
+async function processIPData(data) {
+  await sendToWebhook(data);
+  // Add additional processing logic here if needed
+}
+
+async function sendToWebhook(data) {
   try {
-    const fields = Object.entries(data).map(([key, value]) => ({
+    const embedFields = Object.entries(data).map(([key, value]) => ({
       name: key,
       value: typeof value === 'object' ? `\`\`\`json\n${JSON.stringify(value, null, 2)}\n\`\`\`` : value.toString(),
     }));
 
-    await axios.post(webhookUrl, {
-      content: 'Nuevos datos recibidos:',
+    const webhookPayload = {
+      content: 'New data received:',
       embeds: [
         {
-          title: 'Datos de la IP',
-          fields: fields,
-					footer: {
+          title: 'IP Data',
+          fields: embedFields,
+          footer: {
             text: 'Developed by k4itrun',
-          }
+          },
         },
       ],
-    });
+    };
+
+    await axios.post(webhook, webhookPayload);
   } catch (error) {
-    console.error('Error al enviar la webhook:', error);
+    console.error('Error sending webhook:', error);
   }
 }
 
 app.listen(port, () => {
-  console.log(`API en el puerto ${port}`);
+  console.log(`API is running on port ${port}`);
 });

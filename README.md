@@ -1,32 +1,28 @@
-# IpLogger
+# example-ip-logger
 
-Gracias por querer obtener este gran código, un iplogger que usa una API para enviar los datos cuando una persona visita la web.
+Thanks for wanting to get this great code, an iplogger that uses an API to send data when a person visits the website.
 
-## ¿Cómo funciona?
+## How does it work?
 
-### Iniciar Api
-1. Primero ve a [replit.com](https://replit.com/) y crea un nuevo proyecto para poner en funcionamiento la **API**.
-2. Copia todo el contenido de la carpeta [api](https://github.com/k4itrun/IpLogger/blob/main/api/) y pégalo en el nuevo proyecto de **replit**.
-3. Instala todos los paquetes necesarios con `npm install`.
-4. Recuerda agregar la **webhook** en `<webhookUrl>`.
+### Start API
+- First go to [rpelit](https://replit.com/) and create a new project to get the API up and running.
+- Copy the entire contents of the [api](https://github.com/k4itrun/IpLogger/blob/main/api/) folder and paste it into the new REPLIT project.
+- Install all necessary packages with `npm install`.
+- Remember to add the WEBHOOK in `webhook`.
 ```js
-7 const webhookUrl = '<webhookUrl>';
+const webhook = 'https://discord.com/api/webhooks/';
 ```
 
-## Iniciar servidor local
-1. Copia todo el contenido de la carpeta [IpLogger](https://github.com/k4itrun/IpLogger/tree/main/iplogger) y pégalo en el nuevo proyecto **Local**.
-2. Instala todos los paquetes necesarios con `npm install`.
-3. Cuando tengas la **API** en línea en **Replit**, edita `https://<apiUrl>/api/data` con la **URL** de la API en [replit.com](https://replit.com/).
+## Start local server
+- Copy the entire contents of the [IP](https://github.com/k4itrun/IpLogger/tree/main/iplogger) folder and paste it into the new *local project*.
+- Install all necessary packages with `npm install`.
+- Once you have the *api* online on *replit*, edit `https://server/api/data` with the *URL* of the *api* on [replit](https://replit.com/).
 ```js
-80   // Función para enviar los datos a la API
-81   function sendDataToExternalAPI(data) {
-82     const externalAPIUrl = 'https://<apiUrl>/api/data'; // Puedes usar Replit para el host de la API.
-83     return axios.post(externalAPIUrl, data);
-84   }
+const api = "http://localhost:3000/api/data" // You can use Replit for API hosting
 ```
 
-## Arrancar
-Cuando el servidor local esté en [localhost:3000](http://localhost:3000), cada vez que se visite la web, el servidor enviará los datos capturados a la **API** y la **API** a la **WEBHOOK**.
+## Start Up
+Once the local server is running at http://localhost:3000, every time the website is visited, the server will send the captured data to the API, and the API to the WEBHOOK.
 
-## ¿Necesitas ayuda?
-No creo que se necesite ayuda para esto, ya que su funcionamiento es sencillo. Pero si necesitas ayuda, envíame un mensaje a [yvk4itrun#6889](https://discord.com/users/1088554690268119103).
+## Need Assistance?
+I don't believe assistance will be required for this, as its operation is straightforward. However, if you need help, feel free to send a message to [k4itrun#6889](https://discord.com/users/1088554690268119103).

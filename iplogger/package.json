@@ -1,23 +1,18 @@
 {
-  "name": "nodejs",
   "main": "index.js",
+  "version": "2.0",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index"
   },
   "dependencies": {
     "@types/node": "^18.0.6",
     "axios": "^1.4.0",
     "body-parser": "^1.20.2",
-    "discord-webhook-node": "^1.1.8",
-    "discordinfos": "^1.1.8",
     "express": "^4.18.2",
     "express-useragent": "^1.0.15",
-    "fs": "^0.0.1-security",
     "googleapis": "^118.0.0",
     "node-fetch": "^3.2.6",
-    "replit-uptimer": "^1.5.8",
     "request": "^2.88.2",
-    "request-ip": "^3.3.0",
-    "v11-discord.js": "^11.5.8"
+    "request-ip": "^3.3.0"
   }
 }

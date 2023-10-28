@@ -1,3 +1,29 @@
-node_modules
+# Generated modules and dependencies
+node_modules/
 
+#db
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+test.js
+
+# Log files & json
 package-lock.json
+npm-debug.log
+yarn-error.log
+
+# Backup files
+*.bak
+
+# Environment variables
+.env
+
+# Cache
+.cache/
+
+# Local configuration files (e.g., for IDE)
+.vscode/
+.idea/
+
+# Folder for temporary files (e.g., file uploads)
+tmp/
