@@ -5,7 +5,7 @@ Thanks for wanting to get this great code, an iplogger that uses an API to send 
 ## How does it work?
 
 ### Start API
-- First go to [rpelit](https://replit.com/) and create a new project to get the API up and running.
+- First go to [replit](https://replit.com/) and create a new project to get the API up and running.
 - Copy the entire contents of the [api](https://github.com/k4itrun/IpLogger/blob/main/api/) folder and paste it into the new REPLIT project.
 - Install all necessary packages with `npm install`.
 - Remember to add the WEBHOOK in `webhook`.
